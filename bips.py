@@ -19,11 +19,8 @@ def login():
                 's':'',
                 'securitytoken':'guest',
                 'vb_login_username':username, # username string,
-<<<<<<< HEAD
                 'vb_login_password':'', # remains empty; this is a field for clear text password,
-=======
-                'vb_login_password':'' # remains empty; this is a field for clear text password,
->>>>>>> 724fc1721748e1dae54df86f3aa277d26b940fe0
+                'vb_login_password':'', # remains empty; this is a field for clear text password,
                 'cookieuser':'1'}
         headers = {'Content-type': 'application/x-www-form-urlencoded'}
         
@@ -42,7 +39,7 @@ def random_url(thread_ids):
         Then the thread id is concatenated with the static url. Both the
         random thread id and complete url are passed back to post(). '''
         
-        threadurl = 'http://postfarm.net/showthread.php?t='
+        threadurl = 'http://postfarm.net/newreply.php?t='
         generate_random_thread_id = thread_ids[randrange(0, len(thread_ids))]
         randurl = str(threadurl + generate_random_thread_id)
         return randurl, generate_random_thread_id
@@ -66,7 +63,7 @@ def post():
 
         page = BeautifulSoup(randurl)
         token_value = str(soup.find('input', attrs={'name':'securitytoken'})['value'])
-        messagebody = {'message':'badass',
+        messagebody = {'message':'who wants some free nikes? we make em cheap',
                        'fromquickreply':'1',
                        's':'',
                        'securitytoken':token_value,
@@ -74,13 +71,8 @@ def post():
                        't':rand_thread_id,
                        'p':'who cares',
                        'parseurl':'1'}
-<<<<<<< HEAD
-
-        http.request(randurl, 'POST', headers=headers, body=urllib.urlencode(messagebody))
-=======
         resp, cont = http.request(randurl, 'POST', headers=headers, body=urllib.urlencode(messagebody))
->>>>>>> 724fc1721748e1dae54df86f3aa277d26b940fe0
-        print resp
+##        print resp
 
 if __name__ == '__main__':
         post()
