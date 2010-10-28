@@ -19,7 +19,7 @@ def login():
                 's':'',
                 'securitytoken':'guest',
                 'vb_login_username':username, # username string,
-                'vb_login_password':'' # remains empty; this is a field for clear text password,
+                'vb_login_password':'', # remains empty; this is a field for clear text password,
                 'cookieuser':'1'}
         headers = {'Content-type': 'application/x-www-form-urlencoded'}
         
