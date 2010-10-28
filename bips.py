@@ -19,7 +19,11 @@ def login():
                 's':'',
                 'securitytoken':'guest',
                 'vb_login_username':username, # username string,
+<<<<<<< HEAD
                 'vb_login_password':'', # remains empty; this is a field for clear text password,
+=======
+                'vb_login_password':'' # remains empty; this is a field for clear text password,
+>>>>>>> 724fc1721748e1dae54df86f3aa277d26b940fe0
                 'cookieuser':'1'}
         headers = {'Content-type': 'application/x-www-form-urlencoded'}
         
@@ -70,8 +74,12 @@ def post():
                        't':rand_thread_id,
                        'p':'who cares',
                        'parseurl':'1'}
+<<<<<<< HEAD
 
         http.request(randurl, 'POST', headers=headers, body=urllib.urlencode(messagebody))
+=======
+        resp, cont = http.request(randurl, 'POST', headers=headers, body=urllib.urlencode(messagebody))
+>>>>>>> 724fc1721748e1dae54df86f3aa277d26b940fe0
         print resp
 
 if __name__ == '__main__':
