@@ -70,7 +70,8 @@ def post():
                        't':rand_thread_id,
                        'p':'who cares',
                        'parseurl':'1'}
-        resp, cont = http.request(randurl, 'POST', headers=headers, body=urllib.urlencode(messagebody))
+
+        http.request(randurl, 'POST', headers=headers, body=urllib.urlencode(messagebody))
         print resp
 
 if __name__ == '__main__':
